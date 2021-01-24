@@ -1,0 +1,42 @@
+fieldset {
+  border: none;
+  padding: 0;
+  position: relative;
+}
+
+[type="text"] {
+  font-size: 26px;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid var(--grey);
+  padding: 5px 0;
+  transition: border-color 300ms;
+}
+
+[type="text"]:focus {
+  border-color: black;
+}
+
+[type="text"] + label {
+  font-size: 26px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--grey);
+  pointer-events: none;
+  transform-origin: left;
+  transition: transform 300ms;
+}
+
+[type="text"]:focus + label,
+[type="text"]:not(:placeholder-shown) + label {
+  transform: scale(0.6) translateY(-40px);
+}
+
+[type="text"]:not(:placeholder-shown):not(:focus):invalid {
+  border-bottom: 3px solid var(--red);
+}
+
+[type="text"]:not(:placeholder-shown):not(:focus):valid {
+  border-bottom: 3px solid var(--green);
+}

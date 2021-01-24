@@ -1,0 +1,46 @@
+main {
+  padding: 50px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+[type="radio"] {
+  display: none;
+}
+
+[type="radio"] + label {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: var(--grey);
+  padding: 12px;
+  text-align: center;
+  transition: background-color 300ms;
+}
+
+[type="radio"]:checked + label {
+  background-color: var(--green);
+}
+
+.content {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.content > * {
+  margin: 20px;
+}
+
+[type="radio"]:checked ~ .content {
+  height: auto;
+  opacity: 1;
+}

@@ -1,0 +1,41 @@
+body {
+  display: flex;
+  align-items: center;
+}
+
+.product-card {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.product-image {
+  width: 100%;
+  height: 330px;
+  background-color: var(--blue);
+  transition: height 300ms, background-color 300ms;
+  display: block;
+  object-fit: contain;
+}
+
+.name {
+  margin: 10px;
+  font-size: 36px;
+}
+
+.cart-button {
+  margin-left: 10px;
+  width: calc(100% - 20px);
+}
+
+.product-card:focus > .product-image {
+  background-color: var(--dark-blue);
+  height: 276px;
+}

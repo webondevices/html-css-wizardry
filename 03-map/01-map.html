@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="01-map.css" />
+  </head>
+
+  <body>
+    <main>
+      <img src="../assets/desk.jpeg" usemap="#desk-items" />
+      <map name="desk-items">
+        <area
+          alt="headphones"
+          title="headphones"
+          href="#headhphones"
+          coords="120,364,116"
+          shape="circle"
+        />
+        <area
+          alt="peripherals"
+          title="peripherals"
+          href="#peripherals"
+          coords="260,314,737,478"
+          shape="rect"
+        />
+        <area
+          alt="stationery"
+          title="stationery"
+          href="#stationery"
+          coords="526,296,735,296,729,16,563,16,563,108,524,108"
+          shape="poly"
+        />
+      </map>
+
+      <div class="popup" id="headhphones">
+        An awesome pair of headphones!<a class="close" href="#">X</a>
+      </div>
+      <div class="popup" id="peripherals">
+        These are the peripherals: the keyboard and the mouse.<a
+          class="close"
+          href="#"
+          >X</a
+        >
+      </div>
+      <div class="popup" id="stationery">
+        This is my stationery: a notepad and a pen.<a class="close" href="#"
+          >X</a
+        >
+      </div>
+    </main>
+  </body>
+</html>

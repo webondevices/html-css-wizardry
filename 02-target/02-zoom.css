@@ -1,0 +1,56 @@
+#carousel-container {
+  height: 350px;
+  width: 600px;
+  padding: 0;
+}
+
+#carousel {
+  position: relative;
+}
+
+#carousel,
+.slide {
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slide {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: scale(0.5) rotate(-10deg);
+  filter: blur(20px) brightness(0);
+  transition: opacity 1s, transform 1s, filter 1s;
+  pointer-events: none;
+}
+
+.slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide:target {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+  filter: blur(0) brightness(1);
+}
+
+.slide:target ~ .slide {
+  opacity: 0;
+  transform: scale(1.5) rotate(10deg);
+  filter: blur(20px) brightness(2);
+}
+
+a {
+  display: inline-block;
+  margin: 20px;
+}
+
+nav {
+  text-align: center;
+}

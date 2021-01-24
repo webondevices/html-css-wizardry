@@ -1,0 +1,71 @@
+:root {
+  --second: 1s;
+  --minute: calc(var(--second) * 60);
+  --hour: calc(var(--minute) * 60);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.clock {
+  --setTimeHour: 14;
+  --setTimeMinute: 01;
+  --timeShiftHour: calc(var(--setTimeHour) * var(--hour));
+  --timeShiftMinute: calc(var(--setTimeMinute) * var(--minute));
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: var(--grey);
+  margin: 0 auto;
+  position: relative;
+  transform: rotate(180deg);
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - var(--width) / 2);
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--color);
+  border-radius: calc(var(--width) / 2);
+  transform-origin: center 0;
+}
+
+.second {
+  --width: 5px;
+  --height: 140px;
+  --color: var(--yellow);
+}
+
+.minute {
+  --width: 10px;
+  --height: 90px;
+  --color: var(--blue);
+}
+
+.hour {
+  --width: 10px;
+  --height: 50px;
+  --color: var(--dark-blue);
+}
+
+.second.hand {
+  animation: rotate steps(60) var(--minute) infinite;
+}
+
+.minute.hand {
+  animation: rotate linear var(--hour) infinite;
+  animation-delay: calc(var(--timeShiftMinute) * -1);
+}
+
+.hour.hand {
+  animation: rotate linear calc(var(--hour) * 12) infinite;
+  animation-delay: calc((var(--timeShiftHour) + var(--timeShiftMinute)) * -1);
+}
