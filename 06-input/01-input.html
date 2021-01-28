@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="01-input.css" />
+  </head>
+
+  <body>
+    <main>
+      <form action="login-api/">
+        <fieldset>
+          <legend>Submit your score</legend>
+
+          <label for="email">Enter your Gmail</label>
+          <input
+            id="email"
+            placeholder="Enter your email ending with @gmail.com"
+            pattern="^[a-zA-Z0-9_.+-]+@gmail.com$"
+            name="email"
+            type="email"
+            required
+          />
+          <span class="error-message"
+            >Enter a valid email ending with @gmail.com</span
+          >
+          <span class="success-message">Email correct</span>
+
+          <label for="lastName">Enter your test result</label>
+          <input
+            id="score"
+            placeholder="Enter number between 0 and 100"
+            type="number"
+            name="score"
+            min="65"
+            max="100"
+            required
+          />
+          <span class="error-message"
+            >You haven't reached the minimum score</span
+          >
+          <span class="success-message"
+            >Congratulations for your excellent score</span
+          >
+
+          <label
+            >Tick if you want to receive marketing spam from us
+            <input id="accept" name="marketing" type="checkbox" required />
+          </label>
+
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

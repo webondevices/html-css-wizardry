@@ -1,0 +1,89 @@
+main {
+  padding: 50px;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+input,
+button,
+label {
+  display: block;
+}
+
+input {
+  width: 400px;
+  height: 30px;
+  padding: 15px;
+  font-size: 16px;
+  outline: none;
+  border: 2px solid var(--grey);
+}
+
+label {
+  margin-top: 30px;
+}
+
+.error-message,
+.success-message {
+  display: none;
+}
+
+input:focus {
+  border: 2px solid black;
+}
+
+input:optional {
+  background-color: 2px solid var(--yellow);
+}
+
+.error-message {
+  color: var(--red);
+}
+
+.success-message {
+  color: var(--green);
+}
+
+input:not(:placeholder-shown):not(:focus):valid {
+  border: 2px solid var(--green);
+}
+
+input:not(:placeholder-shown):not(:focus):invalid {
+  border: 2px solid var(--red);
+}
+
+input:not(:placeholder-shown):not(:focus):invalid + .error-message,
+input:not(:placeholder-shown):not(:focus):valid
+  + .error-message
+  + .success-message {
+  display: block;
+}
+
+[type="checkbox"] {
+  width: auto;
+}
+
+[type="submit"] {
+  width: 150px;
+  height: 30px;
+  margin-top: 20px;
+  border: none;
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+form:invalid [type="submit"] {
+  background-color: var(--grey);
+  cursor: not-allowed;
+}
+
+form:invalid [type="submit"]:active {
+  pointer-events: none;
+}

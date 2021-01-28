@@ -1,0 +1,29 @@
+main {
+  padding: 50px;
+  counter-reset: list-counter;
+}
+
+li {
+  margin-bottom: 20px;
+  margin-left: 50px;
+  counter-increment: list-counter;
+}
+
+li::before {
+  content: counter(list-counter) "th";
+}
+li:nth-child(10n + 1)::before {
+  content: counter(list-counter) "st";
+}
+li:nth-child(10n + 2)::before {
+  content: counter(list-counter) "nd";
+}
+li:nth-child(10n + 3)::before {
+  content: counter(list-counter) "rd";
+}
+
+li:nth-child(100n + 11)::before,
+li:nth-child(100n + 12)::before,
+li:nth-child(100n + 13)::before {
+  content: counter(list-counter) "th";
+}

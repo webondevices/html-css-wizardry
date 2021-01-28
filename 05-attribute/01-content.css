@@ -1,0 +1,26 @@
+main {
+  padding: 50px;
+}
+
+p {
+  text-align: justify;
+}
+
+hr {
+  border: 0;
+  background-color: var(--grey);
+  height: 1px;
+  margin: 50px;
+}
+
+hr::after {
+  content: attr(class);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: white;
+  color: darkgrey;
+  padding: 10px;
+  text-transform: capitalize;
+  font-style: italic;
+}

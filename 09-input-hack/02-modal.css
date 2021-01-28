@@ -1,0 +1,95 @@
+main {
+  padding: 50px;
+}
+
+[type="checkbox"] {
+  display: none;
+}
+
+.open-button {
+  width: 200px;
+  height: 30px;
+  background-color: var(--blue);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 300ms;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-box {
+  width: 40%;
+  min-width: 300px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  padding: 2px 8px;
+  border: 4px solid currentColor;
+  cursor: pointer;
+}
+
+#modal-toggle ~ .modal {
+  opacity: 0;
+  pointer-events: none;
+}
+#modal-toggle:checked ~ .modal {
+  opacity: 1;
+  pointer-events: all;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark-blue);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 12px;
+  text-align: center;
+  animation-name: slide-in;
+  animation-delay: 3s;
+  animation-fill-mode: backwards;
+  animation-duration: 300ms;
+  transform: translateY(100%);
+  transition: transform 300ms;
+}
+
+#banner-toggle:checked ~ .banner {
+  transform: translateY(0);
+}
+
+.close-banner {
+  background-color: var(--yellow);
+  color: black;
+  padding: 6px 8px;
+  margin-left: 20px;
+}

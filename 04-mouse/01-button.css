@@ -1,0 +1,16 @@
+button {
+  margin: 20px;
+  color: white;
+  border-radius: 40px;
+  transition: background-color 300ms, transform 300ms;
+}
+
+button:hover {
+  background-color: var(--dark-blue);
+  transform: scale(1.1);
+}
+
+button:active {
+  background-color: var(--red);
+  transform: scale(0.8);
+}

@@ -1,0 +1,58 @@
+:root {
+  counter-reset: order-total;
+}
+
+[data-name="Chair"] {
+  --price: 49;
+}
+[data-name="Clock"] {
+  --price: 29;
+}
+[data-name="Table"] {
+  --price: 199;
+}
+
+[data-amount="1"] {
+  --amount: 1;
+}
+[data-amount="2"] {
+  --amount: 2;
+}
+[data-amount="3"] {
+  --amount: 3;
+}
+[data-amount="4"] {
+  --amount: 4;
+}
+[data-amount="5"] {
+  --amount: 5;
+}
+
+[data-size="small"] {
+  --delivery: 0;
+}
+[data-size="medium"] {
+  --delivery: 29;
+}
+[data-size="large"] {
+  --delivery: 49;
+}
+
+.product {
+  --total-price: var(--price) * var(--amount);
+  --total-delivery: var(--delivery) * var(--amount);
+  --item-total: calc(var(--total-price) + var(--total-delivery));
+  counter-reset: delivery price amount item-total;
+  counter-increment: delivery var(--delivery) price var(--price) amount
+    var(--amount) item-total var(--item-total) order-total var(--item-total);
+}
+
+.product::after {
+  content: attr(data-name) " x " counter(amount) " --- Price: £" counter(price)
+    " Delivery: £" counter(delivery) " --- Total: £" counter(item-total);
+}
+
+.total::after {
+  content: "Order total price: £" counter(order-total);
+  color: var(--red);
+}

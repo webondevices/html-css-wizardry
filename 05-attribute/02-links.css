@@ -1,0 +1,43 @@
+main {
+  padding: 50px;
+}
+
+a {
+  display: inline-block;
+  position: relative;
+  margin: 50px;
+}
+
+a::after {
+  position: absolute;
+  right: -24px;
+  top: 6px;
+  width: 15px;
+  height: 15px;
+  background-size: 100%;
+}
+
+a[download]::after {
+  content: "";
+  background-image: url("../assets/download.png");
+}
+
+a[href$=".pdf"][download]::after {
+  content: "";
+  background-image: url("../assets/pdf.png");
+}
+
+a[href*="facebook.com"]::after {
+  content: "";
+  background-image: url("../assets/fb.png");
+}
+
+a[target="_blank"]::after {
+  content: "";
+  background-image: url("../assets/new-window.png");
+}
+
+a[href^="https://"]::before
+{
+  content: "This link is secure: ";
+}
