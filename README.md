@@ -1,9 +1,13 @@
 # All you need is HTML and CSS
 
-This repository holds the example projects from my book:
+This repository holds all the example projects from my book:
 All you need is HTML and CSS: Building Interactive Web Interfaces with no JavaScript
 [UK Amazon link](https://www.amazon.co.uk/dp/B08ZQ3NSYF/ref=sr_1_1)
 [US Amazon link](https://www.amazon.com/All-you-need-HTML-CSS/dp/B08ZQ3NSYF/ref=sr_1_2)
+
+# Other cool HTML, CSS and JavaScript tricks from me:
+
+[Medium](https://matemarschalko.medium.com/)
 
 ## About the book
 
@@ -24,3 +28,4 @@ Finally, with the checkbox and radio buttons we will push things even further an
 Some example projects from the book are available online for free:
 
 - [Animated page scroll with HTML and CSS only](https://levelup.gitconnected.com/animated-page-scroll-with-html-and-css-only-3788c4e2b853)
+- [CSS-only Interactive, Swipeable Image Carousel](https://matemarschalko.medium.com/css-only-interactive-swipeable-image-carousel-3a38afe3da58)
